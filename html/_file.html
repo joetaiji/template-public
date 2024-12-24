@@ -95,13 +95,20 @@ $(document).ready(function(){
 	}); 
 	$('.type>a').on("click", function(e){
 		e.preventDefault();
-		$(this).parent().toggleClass('open');
+		$(this).parent().toggleClass('active');
 	})
+
 	scrollAC(".topmenu>li");
+
+	/* 마우스 커서 */
+	$(window).on('scroll mousemove', function(e){
+		$('.cursor').css('left', e.pageX + 'px');
+		$('.cursor').css('top', e.pageY + 'px');
+	});
+	$('#gnb li a').hover(function(){
+		$('.cursor').toggleClass('cursor-grow');
+	});
 });
-
-
-
 </script>
 </head>
 <body id="wrap">
@@ -449,30 +456,5 @@ $(document).ready(function(){
 </nav>
 <a href="#wrap" class="go-top fixed"><i class="ri-arrow-up-s-line"></i><span>TOP</span></a>
 
-<script>
-//마우스 커서
-let mouseCursor = document.querySelector(".cursor");
-let navLinks = document.querySelectorAll("#gnb li a"); //메뉴 링크
-//window 객체에 scroll & mouse 이벤트를 추가하고 cursor함수 실행되도록 함
-window.addEventListener("scroll", cursor);
-window.addEventListener("mousemove", cursor);
-//커스텀 커서의 left값과 top값을 커서의 XY좌표값과 일치시킴
-function cursor(e) {
-	mouseCursor.style.left = e.pageX + "px";
-	mouseCursor.style.top = e.pageY + "px";
-}
-
-navLinks.forEach((link) => {
-    link.addEventListener("mouseover", () => {
-      mouseCursor.classList.add("cursor-grow");
-      //link.classList.add("hovered-link");
-    });
-    link.addEventListener("mouseleave", () => {
-      mouseCursor.classList.remove("cursor-grow");
-      mouseCursor.style.zIndex = "1000";
-      //link.classList.remove("hovered-link");
-    });
-});
-</script>
 </body>
 </html>
