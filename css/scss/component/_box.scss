@@ -3,7 +3,7 @@
 /* box */
 .box { padding: 3.2rem 3.6rem;         
     &.bg { background-color: var(--gray); 
-        .picto { background: var(--white);}
+        .icon { background: var(--white);}
     }
     &.bg-white { background-color: var(--white); }
     &.border { border: 1px solid var(--border);}       
@@ -14,7 +14,7 @@
     &.flex-box { @include flex(3rem, center); }   
     //&.vertical { @include flex(2rem, center, $fd:column); }
     &.lg { padding-top: 7rem; padding-bottom: 7rem;} 
-    .picto-wrap { text-align: center;}        
+    .icon-wrap { text-align: center;}        
     .cont { flex: 1; 
         .list-dot { display: inline-block; margin-top: 0;}
     }  
@@ -36,12 +36,12 @@
     } 
     //공지용
     &.pattern { margin-bottom: 4rem; border:9px solid; border-image: url('#{$url}/contents/box_pattern.gif') 9 / 9px round;
-        .picto { width: 10rem; height: 10rem;}
+        .icon { width: 10rem; height: 10rem;}
         .s-title { font-size: 1.9rem;}
     }
     //타이틀용    
     &.title-box { border: 1px solid #b8d7fd; background: linear-gradient(to right, #e5f2fd, #f2f9ff);margin-bottom: 4rem; padding: 4.8rem;
-        .picto { background: none; width: auto; height: auto;
+        .icon { background: none; width: auto; height: auto;
             img { max-height: initial;}
         }
         .cont {
@@ -78,9 +78,9 @@
         &.flex-box { flex-direction: column;}
         &.narrow { padding: 1rem 1.5rem; }
         &.title-box { padding: 2.4rem;
-            .picto { display: none;}
+            .icon { display: none;}
         }
-        .picto + .cont { text-align: center; 
+        .icon + .cont { text-align: center; 
           .list-dot { text-align: left;}  
         }
     }  

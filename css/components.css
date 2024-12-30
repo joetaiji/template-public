@@ -1,34 +1,9 @@
 @charset "UTF-8";
-[class^=s-title-] {
+[class^=heading-] {
   position: relative;
 }
 
-.title-1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.4rem;
-}
-.title-2 {
-  font-size: 2.3rem;
-  margin-bottom: 1.2rem;
-}
-.title-3 {
-  font-size: 2.1rem;
-  margin-bottom: 1rem;
-}
-.title-4 {
-  font-size: 1.9rem;
-  margin-bottom: 0.8rem;
-}
-.title-5 {
-  font-size: 1.7rem;
-  margin-bottom: 0.6rem;
-}
-.title-6 {
-  font-size: 1.5rem;
-  margin-bottom: 0.4rem;
-}
-
-.s-title-1 {
+.heading-m {
   font-size: 2.5rem;
   color: var(--primary-60);
   margin: 3.4rem 0 1.6rem 0;
@@ -36,23 +11,20 @@
   gap: 1rem;
   align-items: center;
 }
-.s-title-1 small {
+.heading-m small {
   font-weight: 400;
   font-size: 1.7rem;
   background: var(--bg-5);
   padding: 0.2rem 1rem;
   border-radius: 0.4rem;
 }
-.s-title-1-sub {
-  margin-bottom: 2rem;
-}
-.s-title-2 {
+.heading-s {
   font-size: 2.1rem;
   margin: 2.4rem 0 1.6rem;
   position: relative;
   padding-left: 2.2rem;
 }
-.s-title-2::before {
+.heading-s::before {
   content: "";
   position: absolute;
   left: 0;
@@ -61,18 +33,18 @@
   height: 1.2rem;
   background-color: #fff;
 }
-.s-title-2::before {
+.heading-s::before {
   border: 3px solid transparent;
   border-image: linear-gradient(135deg, var(--primary-40), var(--primary-70));
   border-image-slice: 1;
 }
-.s-title-3 {
+.heading-xs {
   font-size: 1.9rem;
   margin: 2.4rem 0 1.6rem;
   position: relative;
   padding-left: 1.7rem;
 }
-.s-title-3::before {
+.heading-xs::before {
   content: "";
   position: absolute;
   left: 0;
@@ -82,36 +54,29 @@
   background-color: #3e77c6;
   border-radius: 50%;
 }
-.s-title-4 {
-  font-size: 1.7rem;
-}
 
-.note {
-  font-size: 1.5rem;
-  line-height: 1.5;
-  color: var(--gray-70);
-}
-
-.asterisk {
+.reference {
   position: relative;
-  padding-left: 1.4rem;
+  padding-left: 1.8rem;
 }
-.asterisk::after {
-  content: "*";
-  display: block;
+.reference::before {
+  content: "※";
   position: absolute;
   left: 0;
   top: 0;
 }
 
-.refer-mark {
+.footnote {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: var(--gray-70);
   position: relative;
   padding-left: 1.8rem;
 }
-.refer-mark::before {
-  content: "※";
+.footnote::before {
+  content: "*";
   position: absolute;
-  left: 0;
+  left: 0.4rem;
   top: 0;
 }
 
@@ -365,7 +330,7 @@
 .list-procedure .item-head.bg2 {
   background: #eefafd;
 }
-.list-procedure .item-head .picto {
+.list-procedure .item-head .icon {
   background: var(--white);
 }
 .list-procedure .item-head .title {
@@ -522,30 +487,20 @@
 .data .unit,
 .data_table .unit,
 .table .unit {
+  display: block;
   text-align: right;
   font-size: 0.933em;
   margin: 0 0 0.5rem;
 }
 
-.data th, .data td,
-.data_table th,
-.data_table td {
-  border-left: 1px solid var(--gray-30);
-  border-right: 1px solid var(--gray-30);
+[class*=heading-] + .table {
+  position: relative;
 }
-.data th:first-child, .data th:first-child, .data td:first-child, .data td:first-child,
-.data_table th:first-child,
-.data_table th:first-child,
-.data_table td:first-child,
-.data_table td:first-child {
-  border-left: 0;
-}
-.data th:last-child, .data th:last-child, .data td:last-child, .data td:last-child,
-.data_table th:last-child,
-.data_table th:last-child,
-.data_table td:last-child,
-.data_table td:last-child {
-  border-right: 0;
+[class*=heading-] + .table .unit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(-100%);
 }
 
 /* row-line */
@@ -1324,7 +1279,7 @@ form
 .box.bg {
   background-color: var(--gray);
 }
-.box.bg .picto {
+.box.bg .icon {
   background: var(--white);
 }
 .box.bg-white {
@@ -1351,7 +1306,7 @@ form
   padding-top: 7rem;
   padding-bottom: 7rem;
 }
-.box .picto-wrap {
+.box .icon-wrap {
   text-align: center;
 }
 .box .cont {
@@ -1406,7 +1361,7 @@ form
   border: 9px solid;
   border-image: url("../img/contents/box_pattern.gif") 9/9px round;
 }
-.box.pattern .picto {
+.box.pattern .icon {
   width: 10rem;
   height: 10rem;
 }
@@ -1419,12 +1374,12 @@ form
   margin-bottom: 4rem;
   padding: 4.8rem;
 }
-.box.title-box .picto {
+.box.title-box .icon {
   background: none;
   width: auto;
   height: auto;
 }
-.box.title-box .picto img {
+.box.title-box .icon img {
   max-height: initial;
 }
 .box.title-box .cont .title {
@@ -1501,13 +1456,13 @@ form
   .box.title-box {
     padding: 2.4rem;
   }
-  .box.title-box .picto {
+  .box.title-box .icon {
     display: none;
   }
-  .box .picto + .cont {
+  .box .icon + .cont {
     text-align: center;
   }
-  .box .picto + .cont .list-dot {
+  .box .icon + .cont .list-dot {
     text-align: left;
   }
   .box-wrap {
@@ -1746,7 +1701,7 @@ form
   text-decoration: underline;
 }
 
-.picto {
+.icon {
   border-radius: 50%;
   width: 8.5rem;
   height: 8.5rem;
@@ -1756,11 +1711,11 @@ form
   align-items: center;
   justify-content: center;
 }
-.picto img {
+.icon img {
   max-height: 6.2rem;
 }
 
-.s-picto {
+.s-icon {
   border-radius: 50%;
   width: 3.6rem;
   height: 3.6rem;

@@ -13,7 +13,7 @@ html { position: relative; height: 100vh; font-size: 10px; scroll-behavior: smoo
 
 *, ::after, ::before { box-sizing: border-box; }
 
-body { margin: 0; padding: 0; font-size: var(--fontSize); letter-spacing: var(--letterSpace); font-weight: 400; font-family: var(--fontFamily); line-height: 1.5; color: var(--gray-90); word-break: keep-all; overflow-x: hidden; }
+body { margin: 0; padding: 0; font-size: var(--fontSize); letter-spacing: var(--letterSpace); font-weight: 400; font-family: var(--fontFamily); line-height: 1.5; color: var(--fontColor); word-break: keep-all; overflow-x: hidden; }
 
 dd, dl, dt, li, ol, ul { margin: 0; padding: 0; list-style: none; }
 
