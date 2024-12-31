@@ -2,7 +2,7 @@
 
 /* box */
 .box { padding: 3.2rem 3.6rem;         
-    &.bg { background-color: var(--gray); 
+    &.bg { background-color: var(--gray-5); 
         .icon { background: var(--white);}
     }
     &.bg-white { background-color: var(--white); }
@@ -28,7 +28,7 @@
     
     //인포용
     &.border-top { margin-bottom: 3.4rem; 
-        border-top: 2px solid; border-image: linear-gradient(to right, var(--primary-60), var(--primary-40)); border-image-slice: 1; background: var(--gray);
+        border-top: 2px solid; border-image: linear-gradient(to right, var(--primary-60), var(--primary-40)); border-image-slice: 1; background: var(--gray-5);
         img { margin: .4rem auto 0;}
         .s-title { font-size: 1.9rem;}
         &:has(ul) { align-items: flex-start;}
